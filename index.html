@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href = "styles.css">
+        <script></script>  
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <img src = "https://lh5.googleusercontent.com/D93o9lawUcDSbkREe5uhbMRnlelySCnuheiFfeUz5F2UPUvDW1Qfdujq4hT0v3waUhe0XX4s-PlJun0UemnuSsZqs9s6wbm-4z-zosxmukyr7rBIdvHtRCvDUuRwuKd49kb1OnBF">
+                <h1> BugMe Issue Tracker </h1>
+            </header>
+
+            <div class = "sidenav">
+              <ul>
+                  <a href="#">  Home </a> 
+                  <a href="#">  Add User </a> 
+                  <a href="#">  New Issue </a> 
+                  <a href="#">  Logout </a>  
+              </ul>  
+            </div>
+
+            <div id="form-one">
+                <form id="newuser" action="#" method="POST">
+                    <label> Firstname </label>
+                    <input type="text" name="firstname" id="firstname">
+
+                    <label> Lastname </label>
+                    <input type="text" name="lastname" id="lastname">
+
+                    <label> Password </label>
+                    <input type="text" name="password" id="password">
+
+                    <label> Email </label>
+                    <input type="email" name="email" id="email">
+
+                    <button type="submit" id="formonebtn"> Submit </button>
+
+                </form>
+            </div>
+
+            <div id="dashboard">
+                <button type="submit" id="creatnewissue"> Create New Issue </button>
+                <h3> Filter By: </h3>
+                <nav>
+                    <ul>
+                        <li><a href="#">  All </a>  </li>
+                        <li><a href="#">  Open </a>  </li>
+                        <li><a href="#">  My Tickets </a>  </li>
+                    </ul>  
+                  </nav>
+
+                  <table id="dashboardtable">
+                      <tr>
+                          <th> Title </th>
+                          <th> Type </th>
+                          <th> Status </th>
+                          <th> Assigned To </th>
+                          <th> Created </th>
+                      </tr>
+
+                      <tr>
+                          <td> </td>
+                          <td> </td>
+                          <td> </td>
+                          <td> </td>
+                          <td> </td>
+                      </tr>
+                  </table>
+            </div>
+
+            <div id="newissueform">
+                <h1> Create New Issue </h1>
+                <form id="createissue" action="#" method="POST">
+                    <label> Title </label>
+                    <input type="text" name="title" id="title">
+
+                    <label> Description </label>
+                    <textarea type="text" id="description" name="description"></textarea>
+
+                    <label> Assigned To </label>
+                    <select id="assignedto">
+                        <option value="UserOne"> </option>
+                        <option value="UserTwo"> </option>
+                        <option value="UserThree"> </option>
+                        <option value="UserFour"> </option>
+                    </select>
+
+                    <label> Type </label>
+                    <select id="type">
+                        <option value="bug"> Bug </option>
+                        <option value="proposal"> Proposal </option>
+                        <option value="task"> Task </option>
+                    </select>
+
+                    <label> Priority </label>
+                    <select id="priority">
+                        <option value="major"> Major </option>
+                        <option value="minor"> Minor </option>
+                        <option value="critical"> Critical </option>
+                    </select>
+            </div>
+
+
+            <div id="displayjobdetails">
+                <h1> </h1>
+                <h3> </h3>
+                <p> </p>
+                <p> </p>
+                <p> </p>
+
+
+            <aside>
+                <h3> Assigned To</h3>
+                <p> </p>
+
+                <h3> Type </h3>
+                <p> </p>
+
+                <h3> Priority </h3>
+                <p> </p>
+
+                <h3> Status</h3>
+                <p> </p>
+
+                <button type="submit" id="closed"> Mark as Closed </button>
+                <button type="submit" id="inprogress"> Mark in Progress </button>
+
+
+                
+
+            </aside>
+            </div>
+
+
+
+        </div>
+    </body>
+</html>
