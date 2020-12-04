@@ -2,7 +2,7 @@
     $host = 'localhost';
     $dbname = 'BugIssueDB';
     $username = 'BUGadmin';
-    $password = 'BUGpass';
+    $password = 'BUGpass'; 
 
     try{
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -14,15 +14,20 @@
         $insert=true;
         $inputs=array($fname,$lname,$pswrd,$mail);
         foreach ($inputs as $i):
-        if(!preg_match("/^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/",$i)& $i==$pswrd) {
-            echo "<br>not match";
-            $insert=false;
-        }else{
-            echo"<br>match";
-        }
-
-        
-    }  catch (PDOException $pe) {
+            if(!preg_match("/^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$/",$i) & $i==$pswrd){
+                echo "<br>not match";
+                $insert=false;
+            }
+            else if (empty($i)){
+                echo "empty input";
+                $insert=false; 
+            }
+        endforeach;    
+                
+    
+    
+    } catch(PDOException $pe) {
         die("Could not connect to the database $dbname :" . $pe->getMessage());
-    } ?>
+    } 
+    ?>
     

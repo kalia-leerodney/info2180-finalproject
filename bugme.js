@@ -39,5 +39,6 @@ window.onload = function () {
 			email.style.borderColor = "red";
 			console.log("Please enter an appropriate email address");
 		}
+
 	});
 };
