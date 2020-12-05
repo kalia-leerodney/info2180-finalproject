@@ -25,6 +25,6 @@ CREATE TABLE Issues (
     PRIMARY KEY(id));
 
 INSERT into Users(firstname,lastname,_password,email,date_joined)
-VALUES ("Jack","Ryan",SHA2('password123',512),"admin@project2.com",NOW());
+VALUES ("Jack","Ryan",'$2y$10$l6gNGOMwocl5YRwJhm3eceGDuCrtCsImMhXDR46kBCPbYtyE3quki',"admin@project2.com",NOW());
 
 GRANT ALL PRIVILEGES ON BugIssueDB.* TO 'BUGadmin'@'localhost' IDENTIFIED BY 'BUGpass';
