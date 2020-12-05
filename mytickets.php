@@ -17,7 +17,7 @@
 
     <?php foreach ($myissuesfinal as $issue):?>
         <tr>
-        <td><?php echo "#".$issue['id']; ?><a href=""><?php echo " ".$issue['title']; ?></a></td>
+        <td><?php echo "#".$issue['id']; ?><a onclick="displayFullIssue()" ><?php echo " ".$issue['title']; ?></a></td>
         <td><?php echo $issue['_type']; ?></td>
         <td><?php echo $issue['_status']; ?></td>
         <td><?php echo  $_SESSION['firstname']." ". $_SESSION['lastname']; ?></td>

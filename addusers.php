@@ -26,7 +26,7 @@
               <ul>
                   <a href="dashboard.php">  Home </a> 
                   <a href="addusers.php">  Add User </a> 
-                  <a href="addisue.php">  New Issue </a> 
+                  <a href="createissue.php">  New Issue </a> 
                   <a href="userlogout.php">  Logout </a>  
               </ul>  
             </div>
