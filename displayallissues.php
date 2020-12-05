@@ -24,16 +24,14 @@
     $name= $findname->fetch(PDO::FETCH_ASSOC);
         ?>
         <tr>
-        <td><a><?php echo $issue['title']; ?></td></a>
+        <td><?php echo "#".$issue['id']; ?><a onclick="displayFullIssue()" ><?php echo " ".$issue['title']; ?></a></td>
         <td><?php echo $issue['_type']; ?></td>
         <td><?php echo $issue['_status']; ?></td>
         <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>
         <td><?php echo $issue['created']; ?></td>
         </tr>
         
-    <?php endforeach; ?> 
-
-                      
+    <?php endforeach; ?>    
 </table>
 
 </html>
