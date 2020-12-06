@@ -12,7 +12,7 @@ session_start();
     <tr>
         <th> Title </th>
         <th> Type </th>
-        <th> Status </th>
+        <th id = "status-header"> Status </th>
         <th> Assigned To </th>
         <th> Created </th>
     </tr>
@@ -22,7 +22,7 @@ session_start();
          $findname=$conn->query("SELECT firstname,lastname FROM Users WHERE id='$assign'");
          $name= $findname->fetch(PDO::FETCH_ASSOC); ?>
         <tr>
-            <td class = "issue"><?php echo "#".$issue['id']; ?><a a class="issuelink" href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>" onclick="displayFullIssue(this)" ><?php echo " ".$issue['title']; ?></a></td>
+        <td class='hashtag'><?php echo "#".$issue['id']; ?><a class="issuelink" href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>"><?php echo " ".$issue['title']; ?></a></td>
             <td><?php echo $issue['_type']; ?></td>
             <td><div class='openstatus'> <?php echo $issue['_status']; ?></div></td>            
             <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>
