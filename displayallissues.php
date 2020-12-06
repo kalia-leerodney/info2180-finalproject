@@ -11,7 +11,7 @@
         <tr>
             <th> Title </th>
             <th> Type </th>
-            <th> Status </th>
+            <th id = "status-header"> Status </th>
             <th> Assigned To </th>
             <th> Created </th>
         </tr>
@@ -42,4 +42,3 @@
         <?php }else{
             echo "There are currently no issues being tracked";
         }
-

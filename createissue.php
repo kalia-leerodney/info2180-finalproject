@@ -26,45 +26,59 @@
         </header>
 
         <div class = "sidenav">
-            <ul>
-                <a href="dashboard.php">  Home </a> 
-                <a href="addusers.php">  Add User </a> 
-                <a href="createissue.php">  New Issue </a> 
-                <a href="userlogout.php">  Logout </a>  
-            </ul>  
-        </div>
+                <ul>
+                    <div class = "home">
+                        <img src="MdiHome.svg">
+                        <a href="dashboard.php">Home</a> 
+                    </div>
+
+                    <div class = "adduser">
+                        <img src = "IcBaselineAddCircle.svg">
+                        <a href="addusers.php">Add User</a> 
+                    </div>
+
+                    <div class = "newissue">
+                        <img src = "MdiAccountPlus.svg">
+                        <a href="createissue.php">New Issue</a> 
+                    </div>
+                    <div class = "logout">
+                        <img src = "MdiPower.svg">
+                        <a href="userlogout.php">Logout</a>
+                    </div>
+                </ul>  
+            </div>
 
         <div id="newissueform">
             <h1> Create New Issue </h1>
             <form id="createissue"  method="post">
-                <label> Title </label>
-                <input type="text"  name="title" id="title">
-                <label> Description </label>
-                <textarea type="text"  id="description" name="description"></textarea>
+                <label> Title </label><br>
+                <input type="text" name="title" id="title"><br>
+                <label> Description </label><br>
+                <textarea type="text" id="description" name="description"></textarea><br>
 
-                <label> Assigned To </label>
+                <label> Assigned To </label><br>
                     <select id="assignedto" name="assignedto">
                         <option id="select">Please Select</option>
                         <?php foreach ($allusersfinal as $user): ?>
                         <option> <?php echo $user['firstname']." ".$user['lastname']; ?> </option>
                         <?php endforeach; ?>  
-                    </select>
+                    </select><br>
 
                 
 
-                <label> Type </label>
+                <label> Type </label><br>
                 <select id="type" name="type">
                     <option value="Bug"> Bug </option>
                     <option value="Proposal"> Proposal </option>
                     <option value="Task"> Task </option>
-                </select>
+                </select><br>
 
-                <label> Priority </label>
+                <label> Priority </label><br>
                 <select id="priority" name="priority">
                     <option value="Major"> Major </option>
                     <option value="Minor"> Minor </option>
                     <option value="Critical"> Critical </option>
-                </select>
+                </select><br><br>
 
                 <button type="submit" name="cissue" id="cissue"> Submit </button>
             </form>
@@ -73,7 +87,3 @@
     </div>
     </body> 
 </html>
-
-
-
-

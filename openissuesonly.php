@@ -12,7 +12,7 @@ session_start();
     <tr>
         <th> Title </th>
         <th> Type </th>
-        <th> Status </th>
+        <th id = "status-header"> Status </th>
         <th> Assigned To </th>
         <th> Created </th>
     </tr>
@@ -24,7 +24,7 @@ session_start();
         <tr>
         <td class='hashtag'><?php echo "#".$issue['id']; ?><a id="issuelink" href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>"><?php echo " ".$issue['title']; ?></a></td>
             <td><?php echo $issue['_type']; ?></td>
-            <td><div class='openstatus'> <?php echo $issue['_status']; ?></div></td>
+            <td><div class='openstatus'> <?php echo $issue['_status']; ?></div></td>            
             <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>
             <td><?php echo $issue['created']; ?></td>
         </tr>
@@ -32,5 +32,5 @@ session_start();
     <?php endforeach; ?>                 
 </table>
 <?php }else{
-            echo "There are currently no open issues being tracked";
+            echo "There are currently no open issues being tracked.";
         }
