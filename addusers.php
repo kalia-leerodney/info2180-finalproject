@@ -23,30 +23,45 @@
             </header>
 
             <div class = "sidenav">
-              <ul>
-                  <a href="dashboard.php">  Home </a> 
-                  <a href="addusers.php">  Add User </a> 
-                  <a href="createissue.php">  New Issue </a> 
-                  <a href="userlogout.php">  Logout </a>  
-              </ul>  
+                <ul>
+                    <div class = "home">
+                        <img src="MdiHome.svg">
+                        <a href="dashboard.php">Home</a> 
+                    </div>
+
+                    <div class = "adduser">
+                        <img src = "IcBaselineAddCircle.svg">
+                        <a href="addusers.php">Add User</a> 
+                    </div>
+
+                    <div class = "newissue">
+                        <img src = "MdiAccountPlus.svg">
+                        <a href="createissue.php">New Issue</a> 
+                    </div>
+                    <div class = "logout">
+                        <img src = "MdiPower.svg">
+                        <a href="userlogout.php">Logout</a>
+
+                    </div>
+                </ul>  
             </div>
 
-            <div id="form-one">
-                <h1 id="form-one-head">New User</h1>
+            <div id="form1">
+                <h1>New User</h1>
                 <form id="newuser"  method="post" onsubmit="return Validate()">
-                    <label> Firstname </label>
-                    <input type="text" name="firstname" id="firstname">
+                    <label> Firstname </label><br>
+                    <input type="text" name="firstname" id="firstname"><br>
 
-                    <label> Lastname </label>
-                    <input type="text" name="lastname" id="lastname">
+                    <label> Lastname </label><br>
+                    <input type="text" name="lastname" id="lastname"><br>
 
-                    <label> Password </label>
-                    <input type="text" name="password" id="password">
+                    <label> Password </label><br>
+                    <input type="text" name="password" id="password"><br>
 
-                    <label> Email </label>
-                    <input type="email" name="email" id="email">
+                    <label> Email </label><br>
+                    <input type="email" name="email" id="email"><br><br>
 
-                    <button type="submit" name="formonebtn" id="formonebtn"> Submit </button>
+                    <button type="submit" name="form1btn" id="form1btn"> Submit </button>
 
                 </form>
             </div>
