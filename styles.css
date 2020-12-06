@@ -330,7 +330,7 @@ header h1 {
     border-bottom: 1px solid #ddd;
 }
 
-#issue a{
+.issue a{
     text-decoration: none;
     color: rgb(4, 75, 207);
 }
@@ -387,14 +387,56 @@ header h1 {
     justify-content: space-between;
 }
 
-#dashboardtable #status-header{
-    text-align: center;
+/* #dashboardtable #status-header{
+    padding-left: 17px;
+} */
+
+#dashboardtable #statusalign{
+    align: center;
 }
-#openstatus{
-    align-self: center;
+/* .openstatus{
     background-color: #48BB78;
     border-radius: 3px;
     color: white;
     text-align: center;
     width: 80px;
+    align-items: center;
+    align-content: stretch;
+} */
+
+.progstatus{
+    background-color: #fcc204;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    text-transform: uppercase;
+}
+
+.closestatus{
+    background-color: #fc6704;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    width: 80px;
+    text-transform: uppercase;
+
+}
+
+.openstatus {
+	align-self: center;
+	background-color: #48bb78;
+	border-radius: 3px;
+	color: white;
+	text-align: center;
+	width: 80px;
+}
+.hashtag {
+	font-weight: bold;
+}
+
+.issuelink {
+	font-weight: normal;
+	text-decoration: none;
 }

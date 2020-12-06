@@ -27,7 +27,7 @@ try{
         $stmt->bindParam(":createid", $sessionid);
         $stmt->bindParam(":assignid", $assignid);
         $stmt->execute();
-        echo"Issue successfullly inserted";
+        echo"Issue successfully inserted.";
     }
 }catch(PDOException $pe) {
     die("Could not connect to the database $dbname :" . $pe->getMessage());
