@@ -3,6 +3,7 @@ window.onload = function () {
 	var result = document.getElementById("result");
 	createissuebtn.addEventListener("click", function (e) {
 		e.preventDefault();
+		var check = true;
 		var title = document.getElementById("title");
 		var description = document.getElementById("description");
 		var userList = document.getElementById("assignedto");
@@ -14,19 +15,23 @@ window.onload = function () {
 		title.style.borderColor = "black";
 		description.style.borderColor = "black";
 		userList.style.borderColor = "black";
-		if (title.value == "") {
+		if (title.value.length < 1) {
 			title.style.borderColor = "red";
 			result.innerHTML = "Please Enter all Fields";
+			check = false;
 		}
-		if (description.value == "") {
+		if (description.value.length < 1) {
 			description.style.borderColor = "red";
 			result.innerHTML = "Please Enter all Fields";
+			check = false;
 		}
 
 		if (selectedUser == "Please Select") {
 			userList.style.borderColor = "red";
 			result.innerHTML = "Please Enter all Fields";
-		} else {
+			check = false;
+		}
+		if (check) {
 			var hrequest = new XMLHttpRequest();
 			var urlcode =
 				"addissue.php?title=" +
@@ -44,7 +49,6 @@ window.onload = function () {
 				if (hrequest.readyState == XMLHttpRequest.DONE) {
 					if (hrequest.status == 200) {
 						var issue = hrequest.responseText;
-						var result = document.getElementById("result");
 						result.innerHTML = issue;
 					} else {
 						alert("Error Detected");
@@ -54,6 +58,8 @@ window.onload = function () {
 
 			hrequest.open("GET", urlcode, true);
 			hrequest.send();
+			title.value = "";
+			description.value = "";
 		}
 	});
 };
