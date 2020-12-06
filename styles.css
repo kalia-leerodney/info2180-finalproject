@@ -393,6 +393,7 @@ header h1{
     text-align: center;
 }
 #openstatus{
+    align-self: center;
     background-color: #48BB78;
     border-radius: 3px;
     color: white;
