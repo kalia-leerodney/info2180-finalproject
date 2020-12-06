@@ -24,7 +24,7 @@ session_start();
         <tr>
         <td><?php echo "#".$issue['id']; ?><a href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>" onclick="displayFullIssue(this)" ><?php echo " ".$issue['title']; ?></a></td>
             <td><?php echo $issue['_type']; ?></td>
-            <td><div id='openstatus'> <?php echo $issue['_status']; ?></div></td>
+            <td><div class='openstatus'> <?php echo $issue['_status']; ?></div></td>
             <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>
             <td><?php echo $issue['created']; ?></td>
         </tr>
