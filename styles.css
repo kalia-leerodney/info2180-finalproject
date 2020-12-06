@@ -16,6 +16,19 @@ header{
     align-items: center;
 }
 
+#login {
+    font-weight: bold;
+}
+#loginbtn{
+    border: none;
+    background-color: #4755d6;
+    height: 50px;
+    width: 200px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
 .container header img {
     height: 35px;
     width: 35px;
@@ -89,6 +102,7 @@ header h1{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230);
 }
 
 #lastname{
@@ -99,9 +113,11 @@ header h1{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230);
 }
 
 #password{
+    box-shadow:5px 5px 5px rgb(230, 230, 230);
     width: 500px;
     padding: 12px 20px;
     margin: 8px 0;
@@ -120,6 +136,7 @@ header h1{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230);
 }
 
 #form1btn{
@@ -153,6 +170,7 @@ header h1{
     font-weight: bold;
     text-align: center;
     color: white;
+    border: none;
 }
 
 .display .filterby{
@@ -218,4 +236,166 @@ header h1{
 #myissues:hover{
     background-color: #322fda;
     color: white;
+}
+
+/*CREATE ISSUE*/
+
+.createissue{
+    font-weight: bold;
+}
+
+#title{
+    width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230)
+}
+
+#description{
+    width: 500px;
+    height: 100px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230)
+}
+
+#assignedto{
+    width: 500px;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230)
+}
+
+#type{
+    width: 500px;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230)
+}
+
+#priority{
+    width: 500px;
+    height: 50px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow:5px 5px 5px rgb(230, 230, 230)
+}
+
+#cissue{
+    border: none;
+    background-color: #4755d6;
+    height: 50px;
+    width: 200px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+/*DISPLAY ALL ISSUES*/
+
+#dashboardtable{
+    border-collapse: collapse;
+    width: 100%; 
+}
+
+#dashboardtable th{
+    background-color: rgb(231, 230, 230);
+    text-align: left;
+}
+
+#dashboardtable td{
+    padding: 20px 0px;
+    text-decoration: none;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#issue a{
+    text-decoration: none;
+    color: rgb(4, 75, 207);
+}
+
+
+/*DISPLAY JOB DETAILS*/
+
+#closed{
+    border: none;
+    background-color: #4755d6;
+    height: 45px;
+    width: 315px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+#inprogress {
+    border: none;
+    background-color: #48BB78;
+    height: 45px;
+    width: 315px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+}
+
+.aside {
+    padding-left: 15px;
+    margin: 0px 50px;
+    float: right;
+}
+
+.tab {
+    background-color: rgb(231, 230, 230);
+    border-radius: 10px;
+    width: 300px;
+    padding-left: 15px;
+    padding-top:5px ;
+    padding-bottom: 20px;
+}
+
+#issue-create{
+    color: rgb(155, 155, 155);
+}
+
+#issue-update{
+    color: rgb(155, 155, 155);
+}
+
+.displayjobdetails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#dashboardtable #status-header{
+    text-align: center;
+}
+#openstatus{
+    background-color: #48BB78;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    width: 80px;
 }

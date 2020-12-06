@@ -22,9 +22,9 @@ session_start();
          $findname=$conn->query("SELECT firstname,lastname FROM Users WHERE id='$assign'");
          $name= $findname->fetch(PDO::FETCH_ASSOC); ?>
         <tr>
-        <td><?php echo "#".$issue['id']; ?><a href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>" onclick="displayFullIssue(this)" ><?php echo " ".$issue['title']; ?></a></td>
+            <td id = "issue"><?php echo "#".$issue['id']; ?><a href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>" onclick="displayFullIssue(this)" ><?php echo " ".$issue['title']; ?></a></td>
             <td><?php echo $issue['_type']; ?></td>
-            <td><?php echo $issue['_status']; ?></td>
+            <td><div id='openstatus'> <?php echo $issue['_status']; ?></div></td>            
             <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>
             <td><?php echo $issue['created']; ?></td>
         </tr>
@@ -32,5 +32,5 @@ session_start();
     <?php endforeach; ?>                 
 </table>
 <?php }else{
-            echo "There are currently no open issues being tracked";
+            echo "There are currently no open issues being tracked.";
         }
