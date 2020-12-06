@@ -18,7 +18,7 @@
 
     <?php foreach ($myissuesfinal as $issue):?>
         <tr>
-        <td class='hashtag'><?php echo "#".$issue['id']; ?><a id="issuelink" href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>"><?php echo " ".$issue['title']; ?></a></td>
+        <td class='hashtag'><?php echo "#".$issue['id']; ?><a class="issuelink" href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>"><?php echo " ".$issue['title']; ?></a></td>
         <td><?php echo $issue['_type']; ?></td>
         <?php if($issue['_status']=='OPEN'){ ?>
         <td><div class='openstatus'> <?php echo $issue['_status']; ?></div></td>
