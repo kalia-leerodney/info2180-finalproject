@@ -11,13 +11,11 @@
   $value = 0;
  
 ?>
-
 <!DOCTYPE html>
-
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css">
-        <scripts src="issueform.js" type="text/javascript">
+        <script src="issueform.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -46,7 +44,7 @@
 
                 <label> Assigned To </label>
                     <select id="assignedto" name="assignedto">
-                        <option value="select"> Please Select </option>
+                        <option id="select">Please Select</option>
                         <?php foreach ($allusersfinal as $user): ?>
                         <option> <?php echo $user['firstname']." ".$user['lastname']; ?> </option>
                         <?php endforeach; ?>  
@@ -75,40 +73,7 @@
     </div>
     </body> 
 </html>
-<?php
-if (isset($_POST['cissue'])){
-    try{
-        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        $title= filter_input(INPUT_POST,"title",FILTER_SANITIZE_STRING); 
-        $description= filter_input(INPUT_POST,"description",FILTER_SANITIZE_STRING); 
-        $assignto= filter_input(INPUT_POST,"assignedto",FILTER_SANITIZE_STRING);
-        $type= filter_input(INPUT_POST,"type",FILTER_SANITIZE_STRING); 
-        $priority= filter_input(INPUT_POST,"priority",FILTER_SANITIZE_STRING);
-        $status="OPEN";
-        $insert=true;
-        $sessionid =$_SESSION['user_id'];
-        if ($insert){
-            $myids = $conn->query("SELECT id FROM Users WHERE CONCAT(firstname,' ',lastname)='$assignto' ");
-            $myidsfinals = $myids->fetch(PDO::FETCH_ASSOC);
-            if(isset($myidsfinals)){
-                $assignid=$myidsfinals['id'];
-            }
-            $stmt=$conn->prepare('INSERT INTO Issues (title, _description, _priority, _type, _status, assigned_to, created_by, created, updated)
-            VALUES ( :title, :_description,:priority,:_type,:_status,:assignid,:createid , NOW(), NOW());');
-            $stmt->bindParam(":title",$title);
-            $stmt->bindParam(":_description", $description);
-            $stmt->bindParam(":priority", $priority);
-            $stmt->bindParam(":_type", $type);
-            $stmt->bindParam(":_status",$status);
-            $stmt->bindParam(":createid", $sessionid);
-            $stmt->bindParam(":assignid", $assignid);
-            $stmt->execute();
-            echo"<br> Issue successfullly inserted";
-        }
-    }catch(PDOException $pe) {
-        die("Could not connect to the database $dbname :" . $pe->getMessage());
-    }
-}
+
 
 
 

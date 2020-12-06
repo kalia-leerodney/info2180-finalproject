@@ -3,14 +3,14 @@
         header("Location:http://localhost/info2180-project2/dashboard.php" );
         
     }
-    $error="";
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href = "styles.css">
-        <script type="text/javascript" href="signup.js"></script>
+        <script type="text/javascript" src="login.js"></script>
         
     </head>
     <body>
@@ -21,7 +21,7 @@
             </header>
             <div id="login-form">
                 <h1 id="login-head">User Login</h1>
-                <form id="login" action="" method="post">
+                <form id="login" method="post" onsubmit="return Vali()">
                     <label> Email: </label>
                     <br>
                     <input type="email" name="useremail" id="email">
@@ -32,16 +32,12 @@
                     <br>
                     <button type="submit" name="loginbtn" id="loginbtn"> Login </button>
                 </form>
-                <span><?php echo $error; ?></span>
+                <span id="error"></span>
             </div>
         </div>
     </body>
 </html>
 <?php if (isset($_POST['loginbtn'])){
-    if (isset($_POST['useremail']) &isset($_POST['userpassword'])&!empty($_POST['useremail'])&!empty($_POST['userpassword'])){
         include_once('userlogin.php');
-    }else{
-        echo"Fields should not be empty";
     }
     
-}

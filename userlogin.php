@@ -4,8 +4,7 @@ require 'dbconfig.php';
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $useremail= filter_input(INPUT_POST,"useremail",FILTER_SANITIZE_EMAIL); 
     $userpassword= filter_input(INPUT_POST,"userpassword",FILTER_SANITIZE_STRING);
-    #$useremail="admin@project2.com";
-    #$userpassword="password123";
+    $useremail= filter_var($useremail,FILTER_VALIDATE_EMAIL); 
     $findps=$conn->query("SELECT _password FROM Users WHERE email='$useremail'");
     $ps= $findps->fetch(PDO::FETCH_ASSOC);
     if(isset($ps)){
@@ -20,10 +19,10 @@ require 'dbconfig.php';
             $_SESSION['lastname']=$resultsf['lastname'];
             $_SESSION['user_id']=$resultsf['id'];
             if(isset($_SESSION['logined_user'])){
-            header("Location:http://localhost/info2180-project2/dashboard.php" );
+            header("Location:dashboard.php" );
             }
-        }else{
-            $error="Login Failed. Invalid Email-address or Password";
         }
+    }else{
+        echo "Login Failed. Invalid Email-address or Password";
     }
     ?>

@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
     require_once "dbconfig.php";
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $allissues = $conn->query("SELECT * FROM Issues");
@@ -24,7 +24,7 @@
     $name= $findname->fetch(PDO::FETCH_ASSOC);
         ?>
         <tr>
-        <td><?php echo "#".$issue['id']; ?><a onclick="displayFullIssue()" ><?php echo " ".$issue['title']; ?></a></td>
+        <td><?php echo "#".$issue['id']; ?><a href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>" onclick="displayFullIssue(this)" ><?php echo " ".$issue['title']; ?></a></td>
         <td><?php echo $issue['_type']; ?></td>
         <td><?php echo $issue['_status']; ?></td>
         <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>

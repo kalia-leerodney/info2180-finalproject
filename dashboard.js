@@ -72,21 +72,3 @@ window.onload = function () {
 	hrequest.open("GET", urlcode, true);
 	hrequest.send();
 };
-
-function displayFullIssue() {
-	var hrequest = new XMLHttpRequest();
-	var urlcode = "displayjobdetails.php";
-	hrequest.onreadystatechange = function () {
-		if (hrequest.readyState == XMLHttpRequest.DONE) {
-			if (hrequest.status == 200) {
-				var issue = hrequest.responseText;
-				var result = document.getElementById("display");
-				result.innerHTML = issue;
-			} else {
-				alert("Error Detected");
-			}
-		}
-	};
-	hrequest.open("GET", urlcode, true);
-	hrequest.send();
-}

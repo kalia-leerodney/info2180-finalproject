@@ -4,7 +4,7 @@
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 	if (!isset($_SESSION['logined_user']))
   {
-    header('Location: userlogin.php');
+    header('Location: userlogout.php');
   }
 
 ?>
@@ -34,7 +34,9 @@
         </div>
 
     <div id="display">
-        <a href="createissue.php" id="createnewissue"> Create New Issue </a>
+        <?php if(isset($_SESSION["denied"])){
+        ?><p><?php echo $_SESSION['logined_user']." is not an admin. Only admins are allowed to add users" ?></p><?php } ?>
+        <button onclick="location.href='createissue.php';" id="createnewissue"> Create New Issue </button>
         <h1>Issues</h1>
         <h3> Filter By: </h3>
         <div class="NavBar">
@@ -42,7 +44,6 @@
                 <ul>
                     <li><button id="allissues">  All </button></li>
                     <li><button id="openissues">  Open </button> </li>
-                    <!-- <li><a href="mytickets.php">  My Tickets </a></li> -->
                     <li><button id="myissues">  My Tickets </button></li>
                 </ul>
             </nav>    
@@ -52,4 +53,4 @@
 </div>
 </body>
 	
-</html>
+</html> <?php $_SESSION["denied"]=null;?>
