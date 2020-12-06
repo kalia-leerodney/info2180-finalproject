@@ -4,7 +4,7 @@ window.onload = function () {
 	var password = document.getElementById("password");
 	var email = document.getElementById("email");
 	var result = document.getElementById("result");
-	var myissuebtn = document.getElementById("formonebtn");
+	var myissuebtn = document.getElementById("form1btn");
 	myissuebtn.addEventListener("click", function (e) {
 		e.preventDefault();
 		if (Validate() == true) {

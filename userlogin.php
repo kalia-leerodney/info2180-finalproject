@@ -1,6 +1,6 @@
 <?php session_start();
 require 'dbconfig.php';
-
+    
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $useremail= filter_input(INPUT_POST,"useremail",FILTER_SANITIZE_EMAIL); 
     $userpassword= filter_input(INPUT_POST,"userpassword",FILTER_SANITIZE_STRING);
@@ -23,6 +23,6 @@ require 'dbconfig.php';
             }
         }
     }else{
-        echo "Login Failed. Invalid Email-address or Password";
+        echo "<p id=loginerror'>Login Failed. Invalid Email-address or Password</p>";
     }
     ?>
