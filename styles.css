@@ -217,3 +217,11 @@ header h1 {
 	background-color: #322fda;
 	color: white;
 }
+.hashtag {
+	font-weight: bold;
+}
+
+#issuelink {
+	font-weight: normal;
+	text-decoration: none;
+}
