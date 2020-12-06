@@ -5,7 +5,7 @@ session_start();
 
     $openissues = $conn->query("SELECT * FROM Issues WHERE _status ='OPEN'");
     $openissuesfinal = $openissues->fetchAll(PDO::FETCH_ASSOC);
-  
+    if(!empty($openissuesfinal)){
 ?>
 
 <table id="dashboardtable">
@@ -29,7 +29,8 @@ session_start();
             <td><?php echo $issue['created']; ?></td>
         </tr>
         
-    <?php endforeach; ?> 
-
-                      
+    <?php endforeach; ?>                 
 </table>
+<?php }else{
+            echo "There are currently no open issues being tracked";
+        }

@@ -4,35 +4,34 @@
     $allissues = $conn->query("SELECT * FROM Issues");
     $allissuesfinal = $allissues->fetchAll(PDO::FETCH_ASSOC);
 
-    
+    if(!empty($allissuesfinal)){ 
 ?>
-
-<html>
-
-<table id="dashboardtable">
-    <tr>
-        <th> Title </th>
-        <th> Type </th>
-        <th> Status </th>
-        <th> Assigned To </th>
-        <th> Created </th>
-    </tr>
-
-    <?php foreach ($allissuesfinal as $issue):
-    $assign=$issue['assigned_to'];
-    $findname=$conn->query("SELECT firstname,lastname FROM Users WHERE id='$assign'");
-    $name= $findname->fetch(PDO::FETCH_ASSOC);
-        ?>
+ 
+    <table id="dashboardtable">
         <tr>
-        <td><?php echo "#".$issue['id']; ?><a href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>" onclick="displayFullIssue(this)" ><?php echo " ".$issue['title']; ?></a></td>
-        <td><?php echo $issue['_type']; ?></td>
-        <td><?php echo $issue['_status']; ?></td>
-        <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>
-        <td><?php echo $issue['created']; ?></td>
+            <th> Title </th>
+            <th> Type </th>
+            <th> Status </th>
+            <th> Assigned To </th>
+            <th> Created </th>
         </tr>
-        
-    <?php endforeach; ?>    
-</table>
 
-</html>
+        <?php foreach ($allissuesfinal as $issue):
+        $assign=$issue['assigned_to'];
+        $findname=$conn->query("SELECT firstname,lastname FROM Users WHERE id='$assign'");
+        $name= $findname->fetch(PDO::FETCH_ASSOC);
+            ?>
+            <tr>
+            <td><?php echo "#".$issue['id']; ?><a href="displayjobdetails.php?issueid=<?php echo $issue['id'];?>" onclick="displayFullIssue(this)" ><?php echo " ".$issue['title']; ?></a></td>
+            <td><?php echo $issue['_type']; ?></td>
+            <td><?php echo $issue['_status']; ?></td>
+            <td><?php echo $name['firstname']." ".$name['lastname']; ?></td>
+            <td><?php echo $issue['created']; ?></td>
+            </tr>
+            
+        <?php endforeach; ?>    
+    </table>
+        <?php }else{
+            echo "There are currently no issues being tracked";
+        }
 

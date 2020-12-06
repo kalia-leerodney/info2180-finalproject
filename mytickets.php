@@ -5,6 +5,7 @@
     $sessionid =$_SESSION['user_id'];
     $myissues = $conn->query("SELECT * FROM Issues WHERE assigned_to ='$sessionid' ");
     $myissuesfinal = $myissues->fetchAll(PDO::FETCH_ASSOC);
+    if(!empty($myissuesfinal)){
 ?>
 <table id="dashboardtable">
     <tr>
@@ -27,3 +28,6 @@
     <?php endforeach; ?> 
      
 </table>
+<?php }else{
+            echo "There are currently no issues being tracked that are assigned to you";
+        }

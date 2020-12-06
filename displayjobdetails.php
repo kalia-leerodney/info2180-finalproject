@@ -15,7 +15,7 @@ $creatornm= $findcreator->fetch(PDO::FETCH_ASSOC);
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href = "styles.css">
+        <link rel="stylesheet" href ="styles.css">
         <script type="text/javascript" src="issuedetails.js"></script>
     </head>
     <body>
@@ -40,7 +40,6 @@ $creatornm= $findcreator->fetch(PDO::FETCH_ASSOC);
             <p id="issue-create"> > Issue created on <?php echo $issuedetails["created"]?> by <?php echo $creatornm['firstname']." ".$creatornm['lastname']; ?> </p>
                 <p id="issue-update"> > Issue updated on <?php echo $issuedetails["updated"]?></p>
                 
-
 
                 <aside>
                     <h3> Assigned To</h3>
