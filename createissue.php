@@ -38,9 +38,9 @@
             <h1> Create New Issue </h1>
             <form id="createissue"  method="post">
                 <label> Title </label>
-                <input type="text" name="title" id="title">
+                <input type="text" onfocus="this.value=''" name="title" id="title">
                 <label> Description </label>
-                <textarea type="text" id="description" name="description"></textarea>
+                <textarea type="text" onfocus="this.value=''" id="description" name="description"></textarea>
 
                 <label> Assigned To </label>
                     <select id="assignedto" name="assignedto">

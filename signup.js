@@ -31,6 +31,10 @@ window.onload = function () {
 
 			hrequest.open("GET", urlcode, true);
 			hrequest.send();
+			firstname.value = "";
+			lastname.value = "";
+			password.value = "";
+			email.value = "";
 		}
 	});
 };
